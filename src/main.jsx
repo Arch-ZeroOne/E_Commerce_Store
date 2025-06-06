@@ -7,9 +7,12 @@ import "./assets/css/shop-btn-2.css";
 import "./assets/css/watch-btn.css";
 import "./assets/css/navigation.css";
 import "./assets/css/contact-form.css";
+import ModalContext from "./context/ModalContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ModalContext>
+      <RouterProvider router={router} />
+    </ModalContext>
   </StrictMode>
 );
