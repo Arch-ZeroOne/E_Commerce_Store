@@ -1,10 +1,11 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Background from "../assets/images/background/home-bg.png";
 import ProductCard from "../components/ProductCard";
 import Speaker from "../assets/images/popular/mini-bluetooth-speaker.png";
 import Earphone from "../assets/images/popular/wireless-earphone.png";
 import Headphone from "../assets/images/popular/wireless-headphones.png";
+import Help from "../assets/images/background/product-help.jpg";
+import ShopBtn2 from "../components/ShopBtn2";
 function Home() {
   const popularProducts = [
     {
@@ -37,6 +38,8 @@ function Home() {
           </div>
         ))}
       </div>
+      <Guide />
+      <Faqs />
     </div>
   );
 }
@@ -44,7 +47,7 @@ function Home() {
 function PopularNow() {
   return (
     <div className="font-[Ubuntu] mt-13 mb-10">
-      <h1 className="text-3xl text-center font-bold">Popular Now</h1>
+      <h1 className="text-4xl text-center font-bold">Popular Now</h1>
     </div>
   );
 }
@@ -61,6 +64,30 @@ function NewProduct() {
     >
       <NewProductName />
       <ShopBtn />
+    </div>
+  );
+}
+
+function Guide() {
+  return (
+    <div
+      className=" w-full h-screen mb-10"
+      style={{
+        backgroundImage: `url(${Help})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <section className="flex items-center gap-3 justify-start p-25">
+        <div className="flex flex-col gap-5">
+          <div className="text-white font-[Ubuntu] text-6xl flex flex-col  gap-3  ">
+            <h1>Echo Pulse</h1>
+            <h1>Ultimate</h1>
+            <h1>Gift Guide</h1>
+          </div>
+          <ShopBtn2 />
+        </div>
+      </section>
     </div>
   );
 }
@@ -84,4 +111,11 @@ function ShopBtn() {
   );
 }
 
+function Faqs() {
+  return (
+    <div className="font-[Ubuntu]">
+      <h1>Seamless Shopping Through Apple</h1>
+    </div>
+  );
+}
 export default Home;

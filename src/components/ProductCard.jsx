@@ -10,10 +10,10 @@ function ProductCard({ name, price, img }) {
       }}
     >
       <div className="self-start ml-10 mt-6 flex gap-2 flex-col">
-        <h1 className="text-3xl">{name}</h1>
-        <p className="text-2xl font-medium">{price}</p>
+        <h1 className="text-3xl font-medium">{name}</h1>
+        <p className="text-2xl font-normal">{price}</p>
       </div>
-      <img src={img} className="h-70" />
+      <img src={img} className="h-75" />
       <Colors />
     </div>
   );
