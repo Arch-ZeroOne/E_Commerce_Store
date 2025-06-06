@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Headphone from "../assets/icons/headphone-symbol.png";
+import { Modal, useModal } from "../context/ModalContext";
+
 function Navbar() {
   return (
     <div className="flex items-center p-3 justify-between shadow-xl pr-10 pl-10">
@@ -13,26 +16,32 @@ function Navbar() {
 function Logo() {
   return (
     <div>
-      <img className="h-13" src={Headphone}></img>
+      <NavLink to="/">
+        <img className="h-13" src={Headphone}></img>
+      </NavLink>
     </div>
   );
 }
 
 function Links() {
+  const { modal, showModal } = useModal();
+  useEffect(() => {
+    console.log(modal);
+  }, [modal]);
   return (
-    <div className="flex items-center gap-15 font-[Ubuntu] font-bold text-lg">
-      <a href="" className="navigation">
-        Home
-      </a>
-      <a className="navigation" href="">
-        Products
-      </a>
-      <a className="navigation" href="">
-        Faqs
-      </a>
-      <a className="navigation" href="">
+    <div className="flex items-center gap-15 font-[Ubuntu] font-bold text-lg list-none">
+      <NavLink to="/">
+        <li className="navigation">Home</li>
+      </NavLink>
+      <NavLink to="/products">
+        <li className="navigation">Products</li>
+      </NavLink>
+      <NavLink to="/faqs">
+        <li className="navigation">Faqs</li>
+      </NavLink>
+      <li className="navigation" onClick={() => showModal(!modal)}>
         Login
-      </a>
+      </li>
     </div>
   );
 }
@@ -40,7 +49,7 @@ function Links() {
 function DefaultProfile() {
   return (
     <div>
-      <i class="fa-solid fa-user text-4xl"></i>
+      <i className="fa-solid fa-user text-4xl"></i>
     </div>
   );
 }
