@@ -2,10 +2,10 @@ import React from "react";
 import Headphone from "../assets/icons/headphone-symbol.png";
 function Navbar() {
   return (
-    <div className="flex items-center p-3 justify-between shadow-xl ">
+    <div className="flex items-center p-3 justify-between shadow-xl pr-10 pl-10">
       <Logo />
       <Links />
-      <SearchBtn />
+      <DefaultProfile />
     </div>
   );
 }
@@ -21,18 +21,26 @@ function Logo() {
 function Links() {
   return (
     <div className="flex items-center gap-15 font-[Ubuntu] font-bold text-lg">
-      <a href="">Home</a>
-      <a href="">Products</a>
-      <a href="">About</a>
-      <a href="">Login</a>
+      <a href="" className="navigation">
+        Home
+      </a>
+      <a className="navigation" href="">
+        Products
+      </a>
+      <a className="navigation" href="">
+        Faqs
+      </a>
+      <a className="navigation" href="">
+        Login
+      </a>
     </div>
   );
 }
 
-function SearchBtn() {
+function DefaultProfile() {
   return (
-    <div className="mr-8">
-      <i class="fa-solid fa-magnifying-glass text-lg font-bold"></i>
+    <div>
+      <i class="fa-solid fa-user text-4xl"></i>
     </div>
   );
 }

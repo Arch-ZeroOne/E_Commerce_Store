@@ -2,11 +2,11 @@ import React from "react";
 function ProductCard({ name, price, img }) {
   return (
     <div
-      className="rounded-3xl flex items-center flex-col justify-center font-[Ubuntu] font-bold w-[400px] h-[450px]"
+      className="rounded-3xl flex items-center flex-col justify-center font-[Ubuntu] font-bold w-[400px] h-[450px] mb-10"
       style={{
         boxShadow: "-2px 4px 8px 0px rgba(0,0,0,0.75)",
-        webkitBoxShadow: "-2px 4px 8px 0px rgba(0,0,0,0.75)",
-        mozBoxShadow: "-2px 4px 8px 0px rgba(0,0,0,0.75)",
+        WebkitBoxShadow: "-2px 4px 8px 0px rgba(0,0,0,0.75)",
+        MozBoxShadow: "-2px 4px 8px 0px rgba(0,0,0,0.75)",
       }}
     >
       <div className="self-start ml-10 mt-6 flex gap-2 flex-col">

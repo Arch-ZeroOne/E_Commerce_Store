@@ -2,7 +2,7 @@ import React from "react";
 function ShopBtn2() {
   return (
     <div className="font-[Ubuntu]">
-      <div data-tooltip="Shop Now" class="button">
+      <div data-tooltip="Shop Now" className="button">
         <div className="button-wrapper">
           <div className="text">Shop</div>
           <span className="icon">
@@ -19,7 +19,6 @@ function ShopBtn2() {
           </span>
         </div>
       </div>
-      ;
     </div>
   );
 }
