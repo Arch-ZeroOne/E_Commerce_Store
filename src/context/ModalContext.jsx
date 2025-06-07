@@ -4,7 +4,7 @@ export const Modal = React.createContext();
 export function useModal() {
   return useContext(Modal);
 }
-function ModalContex({ children }) {
+function ModalContext({ children }) {
   const [modal, showModal] = useState(false);
   return (
     <div>
@@ -13,4 +13,4 @@ function ModalContex({ children }) {
   );
 }
 
-export default ModalContex;
+export default ModalContext;

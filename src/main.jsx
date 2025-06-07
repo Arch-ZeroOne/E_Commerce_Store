@@ -7,6 +7,8 @@ import "./assets/css/shop-btn-2.css";
 import "./assets/css/watch-btn.css";
 import "./assets/css/navigation.css";
 import "./assets/css/contact-form.css";
+import "./assets/css/faq-dropdown.css";
+
 import ModalContext from "./context/ModalContext";
 
 createRoot(document.getElementById("root")).render(

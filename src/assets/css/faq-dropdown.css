@@ -1,0 +1,6 @@
+summary::marker {
+  color: red;
+}
+summary {
+  cursor: pointer;
+}
