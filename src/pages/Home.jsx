@@ -8,10 +8,11 @@ import Help from "../assets/images/background/product-help.jpg";
 import ShopBtn2 from "../components/ShopBtn2";
 import SignInForm from "../components/SignInForm";
 import { useModal } from "../context/ModalContext";
-import { useEffect } from "react";
+
 function Home() {
   const { modal } = useModal();
 
+  //assigned popular products for mapping
   const popularProducts = [
     {
       name: "VoltAura",

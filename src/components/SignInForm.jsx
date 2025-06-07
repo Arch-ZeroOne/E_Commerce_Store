@@ -1,6 +1,16 @@
 import React from "react";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+} from "firebase/auth";
+import { app } from "../firebase/config";
 
+const auth = getAuth(app);
 function SignInForm() {
+  const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
   return (
     <div className=" bg-[rgb(0,0,0,0.2)] z-50 fixed w-full">
       <div className="flex flex-col items-center justify-center h-screen">
@@ -27,16 +37,35 @@ function SignInForm() {
 
             <div className="flex justify-center p-3 gap-3">
               <i
-                class="fa-brands fa-google text-2xl cursor-pointer"
-                id="logInGoogle"
+                className="fa-brands fa-google text-2xl cursor-pointer"
+                onClick={() => toggleForm(googleProvider)}
               ></i>
-              <i class="fa-brands fa-facebook text-2xl cursor-pointer"></i>
+              <i className="fa-brands fa-facebook text-2xl cursor-pointer"></i>
             </div>
           </form>
         </div>
       </div>
     </div>
   );
+}
+
+function toggleForm(provider) {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+
+      console.log(user);
+    })
+    .catch((error) => {
+      const error_code = error.code;
+      const error_message = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(error_code);
+    });
 }
 
 export default SignInForm;

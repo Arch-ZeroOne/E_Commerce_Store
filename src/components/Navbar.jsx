@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Headphone from "../assets/icons/headphone-symbol.png";
-import { Modal, useModal } from "../context/ModalContext";
+import { useModal } from "../context/ModalContext";
 
 function Navbar() {
   return (
@@ -25,9 +25,7 @@ function Logo() {
 
 function Links() {
   const { modal, showModal } = useModal();
-  useEffect(() => {
-    console.log(modal);
-  }, [modal]);
+
   return (
     <div className="flex items-center gap-15 font-[Ubuntu] font-bold text-lg list-none">
       <NavLink to="/">
